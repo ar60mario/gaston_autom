@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.gmeventas.entities.ConfiguracionTop" schema="gaston" table="configuracion_top">
+        <id name="id" column="ID">
+            <generator class="identity"/>
+        </id>
+        <property name="orderMaximo" type="integer" column="ORDER_MAXIMO"/>
+        <property name="importeMaximo" type="double" column="IMPORTE_MAXIMO"/>
+        <property name="importeMaximoPanificados" type="double" column="IMPORTE_MAXIMO_PANIFICADOS"/>
+    </class>
+</hibernate-mapping>

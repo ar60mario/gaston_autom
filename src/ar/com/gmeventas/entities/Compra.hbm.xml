@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.gmeventas.entities.Compra" schema="gaston" table="compra">
+        <id name="id" column="ID">
+            <generator class="identity"/>
+        </id>
+        <property name="proveedor" type="string" column="PROVEEDOR"/>
+        <property name="comprobante" type="string" column="COMPROBANTE"/>
+        <property name="fecha" type="date" column="FECHA"/>
+        <property name="cantidad" type="float" column="CANTIDAD"/>
+        <property name="nuevoPrecio" type="double" column="NUEVO_PRECIO"/>
+        <property name="nuevoImpuesto" type="float" column="NUEVO_IMPUESTO"/>
+        <many-to-one name="producto"
+                    class="ar.com.gmeventas.entities.Producto"
+                     lazy="false">
+                     <column name="ID_PRODUCTO" not-null="false"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

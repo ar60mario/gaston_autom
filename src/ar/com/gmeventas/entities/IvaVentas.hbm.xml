@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.gmeventas.entities.IvaVentas" schema="gaston" table="iva_ventas">
+        <id name="id" column="ID">
+            <generator class="identity"/>
+        </id>
+        <property name="fecha" type="date" column="FECHA"/>
+        <property name="letra" type="string" column="LETRA"/>
+        <property name="numeroSucursal" type="integer" column="NUMERO_SUCURSAL"/>
+        <property name="numeroFactura" type="integer" column="NUMERO_FACTURA"/>
+        <property name="gravado" type="double" column="GRAVADO"/>
+        <property name="gravado10_5" type="double" column="GRAVADO_10_5"/>
+        <property name="gravado0" type="double" column="GRAVADO_0"/>
+        <property name="gravado27" type="double" column="GRAVADO_27"/>
+        <property name="exento" type="double" column="EXENTO"/>
+        <property name="noGravado" type="double" column="NO_GRAVADO"/>
+        <property name="impuesto" type="double" column="IMPUESTO"/>
+        <property name="iva" type="double" column="IVA"/>
+        <property name="iva10_5" type="double" column="IVA_10_5"/>
+        <property name="iva0" type="double" column="IVA_0"/>
+        <property name="iva27" type="double" column="IVA_27"/>
+        <property name="descuentoGlobal" type="double" column="DESCUENTO_GLOBAL"/>
+        <property name="total" type="double" column="TOTAL"/>
+        <property name="fechaCae" type="date" column="FECHA_CAE"/>
+        <property name="cae" type="long" column="CAE"/>
+        <property name="letraReferencia" type="string" column="LETRA_REFERENCIA"/>
+        <property name="numeroSucursalReferencia" type="integer" column="NUMERO_SUCURSAL_REFERENCIA"/>
+        <property name="numeroFacturaReferencia" type="integer" column="NUMERO_FACTURA_REFERENCIA"/>
+        <property name="tipoDoc" type="integer" column="TIPO_DOC"/>
+        <many-to-one name="cliente"
+                    class="ar.com.gmeventas.entities.Cliente"
+                     lazy="false">
+                     <column name="ID_CLIENTE" not-null="false"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

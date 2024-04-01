@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.gmeventas.entities.ProductoTop" schema="gaston" table="producto_top">
+        <id name="id" column="ID">
+            <generator class="identity"/>
+        </id>
+        <property name="codigo" type="integer" column="CODIGO" unique="true"/>
+        <property name="activo" type="boolean" column="ACTIVO"/>
+        <property name="usado" type="boolean" column="USADO"/>
+        <property name="orden" type="integer" column="ORDEN"/>
+        <property name="cantidad" type="integer" column="CANTIDAD"/>
+        <property name="panificado" type="boolean" column="PANIFICADO"/>
+        <property name="stock" type="float" column="STOCK"/>
+        <property name="detalle" type="string" column="DETALLE"/>
+        <property name="precio" type="double" column="PRECIO"/>
+        <property name="impuesto" type="float" column="IMPUESTO"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.gmeventas.entities.Configuracion" schema="gaston" table="configuracion">
+        <id name="id" column="ID">
+            <generator class="identity"/>
+        </id>
+        <property name="iva" type="float" column="IVA"/>
+        <property name="ivaPan" type="float" column="IVA_PAN"/>
+        <property name="sucursalA" type="integer" column="SUCURSAL_A"/>
+        <property name="numeroFacturaA" type="integer" column="NUMERO_FACTURA_A"/>
+        <property name="sucursalB" type="integer" column="SUCURSAL_B"/>
+        <property name="numeroFacturaB" type="integer" column="NUMERO_FACTURA_B"/>
+        <property name="numeroRecibo" type="integer" column="NUMERO_RECIBO"/>
+        <property name="numeroRemito" type="integer" column="NUMERO_REMITO"/>
+        <property name="numeroPedido" type="integer" column="NUMERO_PEDIDO"/>
+        <property name="ultimaFecha" type="date" column="ULTIMA_FECHA"/>
+        <property name="ultimaFechaPanificados" type="date" column="ULTIMA_FECHA_PANIFICADOS"/>
+    </class>
+</hibernate-mapping>

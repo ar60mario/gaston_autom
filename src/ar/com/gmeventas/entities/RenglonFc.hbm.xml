@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.gmeventas.entities.RenglonFc" schema="gaston" table="renglon_fc">
+        <id name="id" column="ID">
+            <generator class="identity"/>
+        </id>
+        <property name="itemNro" type="integer" column="ITEM_NUMERO"/>
+        <property name="gravado" type="double" column="GRAVADO"/>
+        <property name="gravado10_5" type="double" column="GRAVADO_10_5"/>
+        <property name="gravado0" type="double" column="GRAVADO_0"/>
+        <property name="gravado27" type="double" column="GRAVADO_27"/>
+        <property name="noGravado" type="double" column="NO_GRAVADO"/>
+        <property name="cantidad" type="float" column="CANTIDAD"/>
+        <property name="exento" type="double" column="EXENTO"/>
+        <property name="impuesto" type="double" column="IMPUESTO"/>
+        <property name="descuento" type="double" column="DESCUENTO"/>
+        <property name="iva" type="double" column="IVA"/>
+        <property name="iva10_5" type="double" column="IVA_10_5"/>
+        <property name="iva0" type="double" column="IVA_0"/>
+        <property name="iva27" type="double" column="IVA_27"/>
+        <property name="total" type="double" column="TOTAL"/>
+        <property name="sugerido" type="double" column="SUGERIDO"/>
+        <property name="anulado" type="boolean" column="ANULADO"/>
+        <property name="costoG" type="double" column="COSTO_G"/>
+        <property name="costoI" type="double" column="COSTO_I"/>
+        <property name="fabricacion" type="boolean" column="FABRICACION"/>
+        <many-to-one name="factura"
+                    class="ar.com.gmeventas.entities.Factura"
+                     lazy="false">
+                     <column name="ID_FACTURA" not-null="false"/>
+        </many-to-one>
+        <many-to-one name="producto"
+                    class="ar.com.gmeventas.entities.Producto"
+                     lazy="false">
+                     <column name="ID_PRODUCTO" not-null="false"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
